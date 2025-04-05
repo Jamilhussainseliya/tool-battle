@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool Battle Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Tool Battle</h1>
+    <p>Compare the best tools and find the one for you!</p>
+    <a href="#">Start a Tool Battle</a> |
+    <a href="#">Find My Tool (Quiz)</a>
+  </header>
+
+  <main>
+    <section id="comparison">
+      <h2>🔥 Tool Battles</h2>
+    
+      <!-- Battle 1 -->
+      <div class="tool-box">
+        <div>
+          <h3>ChatGPT</h3>
+          <ul>
+            <li>Great for writing</li>
+            <li>Supports plugins</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
+        </div>
+        <div>
+          <h3>Gemini</h3>
+          <ul>
+            <li>Google integration</li>
+            <li>Faster search results</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
+        </div>
+      </div>
+      
+    
+      <!-- Battle 2 -->
+      <div class="tool-box" style="margin-top: 30px;">
+        <div>
+          <h3>Notion</h3>
+          <ul>
+            <li>All-in-one workspace</li>
+            <li>Great for documentation</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes 
+        </div>
+        <div>
+          <h3>Evernote</h3>
+          <ul>
+            <li>Classic note-taking app</li>
+            <li>Good syncing features</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
+        </div>
+      </div>
+    
+      <!-- Battle 3 -->
+      <div class="tool-box" style="margin-top: 30px;">
+        <div>
+          <h3>Canva</h3>
+          <ul>
+            <li>Easy drag-and-drop editor</li>
+            <li>Great templates for social media</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
+        </div>
+        <div>
+          <h3>Figma</h3>
+          <ul>
+            <li>Advanced UI/UX tool</li>
+            <li>Team collaboration features</li>
+          </ul>
+          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
+        </div>
+      </div>
+    </section>    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
