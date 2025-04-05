@@ -40,114 +40,102 @@
     }
   </style>
 </head>
-<body>
-    <body>
-        <div id="quiz">
-          <div class="question" id="question1">
-            <h2>1. What kind of tools are you looking for?</h2>
-            <button onclick="nextQuestion(1, 'AI Tools')">AI Tools</button>
-            <button onclick="nextQuestion(1, 'Design Tools')">Design Tools</button>
-            <button onclick="nextQuestion(1, 'Marketing Tools')">Marketing Tools</button>
-          </div>
+<body><body>
+    <div id="quiz">
+      <div class="question" id="question1">
+        <h2>1. What kind of tools are you looking for?</h2>
+        <button onclick="nextQuestion('AI Tools')">AI Tools</button>
+        <button onclick="nextQuestion('Design Tools')">Design Tools</button>
+        <button onclick="nextQuestion('Marketing Tools')">Marketing Tools</button>
+      </div>
+  
+      <div class="question" id="question2" style="display: none;">
+        <h2>2. What's your main goal?</h2>
+        <button onclick="nextQuestion('Increase Productivity')">Increase Productivity</button>
+        <button onclick="nextQuestion('Collaborate with Team')">Collaborate with Team</button>
+        <button onclick="nextQuestion('Build Something')">Build Something</button>
+      </div>
+  
+      <div class="question" id="question3" style="display: none;">
+        <h2>3. What’s your preferred pricing?</h2>
+        <button onclick="nextQuestion('Free')">Free</button>
+        <button onclick="nextQuestion('Freemium')">Freemium</button>
+        <button onclick="nextQuestion('Paid')">Paid</button>
+      </div>
+  
+      <div class="question" id="question4" style="display: none;">
+        <h2>4. Do you prefer using the tool on?</h2>
+        <button onclick="nextQuestion('Web Browser')">Web Browser</button>
+        <button onclick="nextQuestion('Mobile App')">Mobile App</button>
+        <button onclick="nextQuestion('Desktop Software')">Desktop Software</button>
+      </div>
       
-          <div class="question" id="question2" style="display: none;">
-            <h2>2. What's your main goal?</h2>
-            <button onclick="nextQuestion(2, 'Increase Productivity')">Increase Productivity</button>
-            <button onclick="nextQuestion(2, 'Collaborate with Team')">Collaborate with Team</button>
-            <button onclick="nextQuestion(2, 'Build Something')">Build Something</button>
-          </div>
-
-          <div class="question" id="question3" style="display: none;">
-            <h2>3. What’s your preferred pricing?</h2>
-            <button onclick="nextQuestion(3, 'Free')">Free</button>
-            <button onclick="nextQuestion(3, 'Freemium')">Freemium</button>
-            <button onclick="nextQuestion(3, 'Paid')">Paid</button>
-          </div>
-
-          <div class="question" id="question4" style="display: none;">
-            <h2>4. Do you prefer using the tool on?</h2>
-            <button onclick="nextQuestion(4, 'Web Browser')">Web Browser</button>
-            <button onclick="nextQuestion(4, 'Mobile App')">Mobile App</button>
-            <button onclick="nextQuestion(4, 'Desktop Software')">Desktop Software</button>
-          </div>
-          
-          <div class="question" id="question5" style="display: none;">
-            <h2>5. What's your budget for this tool?</h2>
-            <button onclick="nextQuestion(5, 'Free')">Free</button>
-            <button onclick="nextQuestion(5, 'Freemium')">Freemium</button>
-            <button onclick="nextQuestion(5, 'Paid')">Paid</button>
-          </div>
-
-          <div class="question" id="question6" style="display: none;">
-            <h2>6. Do you prefer simple tools or powerful advanced tools?</h2>
-            <button onclick="nextQuestion(6, 'Simple & Easy')">Simple & Easy</button>
-            <button onclick="nextQuestion(6, 'Advanced & Feature-rich')">Advanced & Feature-rich</button>
-          </div>
-
-          <div class="question" id="question7" style="display: none;">
-            <h2>7. What’s your budget for tools?</h2>
-            <button onclick="nextQuestion(7, 'Free Only')">Free Only</button>
-            <button onclick="nextQuestion(7, 'Willing to Pay')">Willing to Pay</button>
-          </div>
-
-          <div class="question" id="question8" style="display: none;">
-            <h2>8. What type of interface do you prefer?</h2>
-            <button onclick="finishQuiz('Simple UI')">Simple UI</button>
-            <button onclick="finishQuiz('Advanced Features')">Advanced Features</button>
-          </div>
-
-          <div class="question" id="result" style="display: none;">
-            <h2>🎉 Your Recommended Tool:</h2>
-            <p id="finalRecommendation">Loading...</p>
-          </div>
-          
-          <!-- You can keep adding more questions here -->
-        </div>
-      </body>
-      
-      <script>
-        const answers = [];
-        let currentQuestion = 1;
-        const totalQuestions = 8;
-      
-        function nextQuestion(answer) {
-          answers.push(answer);
-      
-          // Hide current question
-          document.getElementById(`question${currentQuestion}`).style.display = 'none';
-      
-          currentQuestion++;
-      
-          // If done, show results
-          if (currentQuestion > totalQuestions) {
-            showResults();
-          } else {
-            // Show next question
-            document.getElementById(`question${currentQuestion}`).style.display = 'block';
-          }
+      <div class="question" id="question5" style="display: none;">
+        <h2>5. What's your budget for this tool?</h2>
+        <button onclick="nextQuestion('Free')">Free</button>
+        <button onclick="nextQuestion('Freemium')">Freemium</button>
+        <button onclick="nextQuestion('Paid')">Paid</button>
+      </div>
+  
+      <div class="question" id="question6" style="display: none;">
+        <h2>6. Do you prefer simple tools or powerful advanced tools?</h2>
+        <button onclick="nextQuestion('Simple & Easy')">Simple & Easy</button>
+        <button onclick="nextQuestion('Advanced & Feature-rich')">Advanced & Feature-rich</button>
+      </div>
+  
+      <div class="question" id="question7" style="display: none;">
+        <h2>7. What’s your budget for tools?</h2>
+        <button onclick="nextQuestion('Free Only')">Free Only</button>
+        <button onclick="nextQuestion('Willing to Pay')">Willing to Pay</button>
+      </div>
+  
+      <div class="question" id="question8" style="display: none;">
+        <h2>8. What type of interface do you prefer?</h2>
+        <button onclick="nextQuestion('Simple UI')">Simple UI</button>
+        <button onclick="nextQuestion('Advanced Features')">Advanced Features</button>
+      </div>
+    </div>
+  
+    <script>
+      const answers = [];
+      let currentQuestion = 1;
+      const totalQuestions = 8;
+  
+      function nextQuestion(answer) {
+        answers.push(answer);
+  
+        document.getElementById(`question${currentQuestion}`).style.display = 'none';
+        currentQuestion++;
+  
+        if (currentQuestion > totalQuestions) {
+          showResults();
+        } else {
+          document.getElementById(`question${currentQuestion}`).style.display = 'block';
         }
-      
-        function showResults() {
-          // Example result logic based on answers
-          let result = "We recommend: ";
-      
-          if (answers.includes('Increase Productivity')) {
-            result += "Notion or Trello";
-          } else if (answers.includes('Build Something')) {
-            result += "Bubble or Webflow";
-          } else {
-            result += "Google Workspace";
-          }
-      
-          document.getElementById('quiz').innerHTML = `
-            <div class="result">
-              <h2>🎉 Your Recommended Tool</h2>
-              <p>${result}</p>
-              <button onclick="location.reload()">Restart Quiz</button>
-            </div>
-          `;
+      }
+  
+      function showResults() {
+        let result = "We recommend: ";
+  
+        if (answers.includes('AI Tools')) {
+          result += "ChatGPT or Jasper";
+        } else if (answers.includes('Design Tools')) {
+          result += "Canva or Figma";
+        } else {
+          result += "Notion or Trello";
         }
-      </script>
+  
+        document.getElementById('quiz').innerHTML = `
+          <div class="result">
+            <h2>🎉 Your Recommended Tool</h2>
+            <p>${result}</p>
+            <button onclick="location.reload()">Restart Quiz</button>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+  
       
 </body>
 </html>
