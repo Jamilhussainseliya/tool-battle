@@ -6,6 +6,27 @@
   <title>Toolify - Tool Battle</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
+<style>
+    .start-quiz-btn {
+      margin-top: 30px;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      background-color: #00f0ff;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #00f0ff88;
+      transition: all 0.3s ease;
+    }
+  
+    .start-quiz-btn:hover {
+      background-color: #00aabb;
+      color: #fff;
+      box-shadow: 0 0 16px #00f0ffaa;
+    }
+  </style>
+  
   <style>
     body {
       margin: 0;
@@ -108,5 +129,9 @@
       document.getElementById('votes-' + tool).innerText = 'Votes: ' + currentVotes;
     }
   </script>
+  <a href="quiz.html">
+    <button class="start-quiz-btn">🚀 Start Smart Tool Quiz</button>
+  </a>
+  
 </body>
 </html>
