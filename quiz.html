@@ -194,93 +194,67 @@
       </div>
     </div>
 
-    <script>
-      let answers = [];
-      const totalSteps = 3;
-    
-      function updateProgress(step) {
-        document.getElementById("progress").innerText = `Step ${step} / ${totalSteps}`;
-      }
-    
-      function nextQuestion(step, answer) {
-        answers[step - 1] = answer;
-    
-        const current = document.getElementById(`question${step}`);
-        const next = document.getElementById(`question${step + 1}`);
-    
-        current.classList.remove('active');
-        setTimeout(() => {
-          current.style.display = 'none';
-          if (next) {
-            next.style.display = 'block';
-            next.classList.add('active');
-            updateProgress(step + 1);
-          }
-        }, 300);
-      }
-    
-      function finishQuiz(finalAnswer) {
-        answers.push(finalAnswer);
-    
-        document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
-        document.getElementById("result").style.display = "block";
-        document.getElementById("result").classList.add('active');
-        document.getElementById("progress").innerText = `Completed ✅`;
-    
-        const cardsHTML = generateToolCards(answers);
-        document.getElementById("finalCards").innerHTML = cardsHTML;
-      }
-    
-      function restartQuiz() {
-        answers = [];
-        document.querySelectorAll(".question").forEach((q, index) => {
-          q.style.display = index === 0 ? "block" : "none";
-          q.classList.remove("active");
-        });
-        document.getElementById("question1").classList.add("active");
-        updateProgress(1);
-      }
-    
-      function generateToolCards(answers) {
-        let tools = [];
-    
-        if (answers.includes("AI Tools")) {
-          tools = [
-            { name: "ChatGPT", img: "https://chat.openai.com/favicon.ico", link: "https://chat.openai.com/" },
-            { name: "Gemini", img: "https://www.gstatic.com/images/icons/material/apps/gemini.svg", link: "https://gemini.google.com/" },
-            { name: "Toolify AI", img: "https://toolify.strafe.one/favicon.ico", link: "https://toolify.strafe.one/" }
-          ];
-        } else if (answers.includes("Design Tools")) {
-          tools = [
-            { name: "Figma", img: "https://figma.com/favicon.ico", link: "https://figma.com" },
-            { name: "Canva", img: "https://www.canva.com/favicon.ico", link: "https://canva.com" },
-            { name: "Adobe Express", img: "https://www.adobe.com/favicon.ico", link: "https://express.adobe.com/" }
-          ];
-        } else if (answers.includes("Marketing Tools")) {
-          tools = [
-            { name: "Mailchimp", img: "https://mailchimp.com/favicon.ico", link: "https://mailchimp.com" },
-            { name: "Buffer", img: "https://buffer.com/favicon.ico", link: "https://buffer.com" },
-            { name: "Copy.ai", img: "https://www.copy.ai/favicon.ico", link: "https://copy.ai" }
-          ];
-        } else {
-          tools = [
-            { name: "Toolify", img: "https://toolify.strafe.one/favicon.ico", link: "https://toolify.strafe.one" }
-          ];
-        }
-    
-        return tools.map(tool => `
-          <div class="tool-card">
-            <img src="${tool.img}" alt="${tool.name}" />
-            <h3>${tool.name}</h3>
-            <a href="${tool.link}" target="_blank">Visit Site</a>
-          </div>
-        `).join('');
-      }
-    
-      // Initialize progress
-      updateProgress(1);
-    </script>
-    
+  <script>
+  const totalQuestions = 8;
+  let currentQuestion = 1;
+  const userAnswers = {}; // To store answers for each question
+
+  // Hide all questions except first and result
+  window.onload = () => {
+    for (let i = 2; i <= totalQuestions; i++) {
+      document.getElementById(`question${i}`).style.display = 'none';
+    }
+    document.getElementById('result').style.display = 'none';
+    updateProgress(currentQuestion);
+  };
+
+  // Go to next question and store answer
+  function nextQuestion(current, answer) {
+    userAnswers[`question${current}`] = answer;
+
+    document.getElementById(`question${current}`).style.display = 'none';
+
+    const next = current + 1;
+    if (next <= totalQuestions) {
+      document.getElementById(`question${next}`).style.display = 'block';
+      currentQuestion = next;
+      updateProgress(currentQuestion);
+    }
+  }
+
+  // Finish quiz and show result
+  function finishQuiz(answer) {
+    userAnswers[`question${totalQuestions}`] = answer;
+
+    document.getElementById(`question${totalQuestions}`).style.display = 'none';
+    document.getElementById('progress').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+
+    // TODO: Use userAnswers logic here to show relevant tools
+
+    document.getElementById('finalCards').innerHTML = `
+      <div style="margin: 20px 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" style="height: 50px; border-radius: 10px;"><br>
+        <strong>ChatGPT</strong><br>
+        <a href="https://chat.openai.com" target="_blank">Visit Site</a>
+      </div>
+      <div style="margin: 20px 0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" style="height: 50px; border-radius: 10px;"><br>
+        <strong>Gemini</strong><br>
+        <a href="https://gemini.google.com" target="_blank">Visit Site</a>
+      </div>
+    `;
+  }
+
+  function restartQuiz() {
+    location.reload(); // Reload page to restart quiz
+  }
+
+  function updateProgress(step) {
+    document.getElementById('progress').textContent = `Step ${step} / ${totalQuestions}`;
+  }
+</script>
+
 </body>
 </html>
 
