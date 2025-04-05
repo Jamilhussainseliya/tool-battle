@@ -104,18 +104,31 @@ button {
     font-weight: bold;
   }
   
-  .tool-card {
+  .tools-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .tool-card {
     background: #1f1f1f;
     padding: 20px;
     border-radius: 16px;
     text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 200px;
     transition: transform 0.3s ease;
-    text-decoration: none; /* Important */
-    color: white; /* Important */
   }
-
+  .tool-card img {
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  .tool-card:hover {
+    transform: translateY(-5px);
+  }
+  
   
   
