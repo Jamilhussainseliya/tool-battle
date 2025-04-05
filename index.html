@@ -3,84 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tool Battle Platform</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Toolify - Tool Battles & Smart Suggestions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .btn {
+      background-color: #3b82f6;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      margin-top: 30px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 60px 20px;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 20px;
+      width: 250px;
+    }
+
+    .feature-box img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: #111827;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Tool Battle</h1>
-    <p>Compare the best tools and find the one for you!</p>
-    <a href="#">Start a Tool Battle</a> |
-    <a href="#">Find My Tool (Quiz)</a>
-  </header>
 
-  <main>
-    <section id="comparison">
-      <h2>🔥 Tool Battles</h2>
-    
-      <!-- Battle 1 -->
-      <div class="tool-box">
-        <div>
-          <h3>ChatGPT</h3>
-          <ul>
-            <li>Great for writing</li>
-            <li>Supports plugins</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
-        </div>
-        <div>
-          <h3>Gemini</h3>
-          <ul>
-            <li>Google integration</li>
-            <li>Faster search results</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
-        </div>
-      </div>
-      
-    
-      <!-- Battle 2 -->
-      <div class="tool-box" style="margin-top: 30px;">
-        <div>
-          <h3>Notion</h3>
-          <ul>
-            <li>All-in-one workspace</li>
-            <li>Great for documentation</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes 
-        </div>
-        <div>
-          <h3>Evernote</h3>
-          <ul>
-            <li>Classic note-taking app</li>
-            <li>Good syncing features</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
-        </div>
-      </div>
-    
-      <!-- Battle 3 -->
-      <div class="tool-box" style="margin-top: 30px;">
-        <div>
-          <h3>Canva</h3>
-          <ul>
-            <li>Easy drag-and-drop editor</li>
-            <li>Great templates for social media</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
-        </div>
-        <div>
-          <h3>Figma</h3>
-          <ul>
-            <li>Advanced UI/UX tool</li>
-            <li>Team collaboration features</li>
-          </ul>
-          <button onclick="vote(this)">Vote</button> <span class="vote-count">0</span> votes
-        </div>
-      </div>
-    </section>    
-  </main>
+<header>
+  <h1>Toolify</h1>
+  <p>Compare AI Tools. Get Smart Recommendations.</p>
+  <a class="btn" href="#quiz">Take the Quiz</a>
+</header>
 
-  <script src="script.js"></script>
+<section class="features">
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Tool Battle">
+    <h3>Tool Battles</h3>
+    <p>Compare tools side by side. See community votes.</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Smart Quiz">
+    <h3>Smart Suggestion Quiz</h3>
+    <p>Answer questions to get tool recommendations.</p>
+  </div>
+
+  <div class="feature-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Save Time">
+    <h3>Save Time</h3>
+    <p>Let AI pick the best tools for your use case.</p>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Toolify. Made with ❤️ for builders.
+</footer>
 </body>
 </html>
