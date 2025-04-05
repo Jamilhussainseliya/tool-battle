@@ -1,5 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolify Quiz</title>
+
+  <!-- Orbitron Font for Futuristic Look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <!-- Futuristic Dark Mode CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0e0e10;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    #quiz {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #1f1f1f;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00f0ff55;
+      padding: 40px;
+      backdrop-filter: blur(8px);
+    }
+
+    .question h2 {
+      font-size: 1.5rem;
+      color: #00f0ff;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #111;
+      color: #00f0ff;
+      box-shadow: 0 0 10px #00f0ff33;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 15px #00f0ffaa;
+    }
+  </style>
+</head>
+ 
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
