@@ -16,28 +16,34 @@
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      box-sizing: border-box;
     }
 
     #quiz {
-      max-width: 600px;
       width: 100%;
+      max-width: 600px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid #1f1f1f;
       border-radius: 16px;
       box-shadow: 0 0 20px #00f0ff55;
       padding: 40px;
       backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .question {
       display: none;
       animation: fadeIn 0.5s ease forwards;
+      width: 100%;
     }
 
     .question h2 {
       font-size: 1.5rem;
       color: #00f0ff;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     button {
@@ -73,6 +79,7 @@
 </head>
 <body>
   <div id="quiz">
+    <!-- Question 1 -->
     <div class="question" id="question1">
       <h2>1. What kind of tools are you looking for?</h2>
       <button onclick="nextQuestion(1, 'AI Tools')">AI Tools</button>
@@ -80,6 +87,7 @@
       <button onclick="nextQuestion(1, 'Marketing Tools')">Marketing Tools</button>
     </div>
 
+    <!-- Question 2 -->
     <div class="question" id="question2">
       <h2>2. What's your main goal?</h2>
       <button onclick="nextQuestion(2, 'Increase Productivity')">Increase Productivity</button>
@@ -87,6 +95,7 @@
       <button onclick="nextQuestion(2, 'Build Something')">Build Something</button>
     </div>
 
+    <!-- Question 3 -->
     <div class="question" id="question3">
       <h2>3. What’s your preferred pricing?</h2>
       <button onclick="nextQuestion(3, 'Free')">Free</button>
@@ -94,6 +103,7 @@
       <button onclick="nextQuestion(3, 'Paid')">Paid</button>
     </div>
 
+    <!-- Question 4 -->
     <div class="question" id="question4">
       <h2>4. Do you prefer using the tool on?</h2>
       <button onclick="nextQuestion(4, 'Web Browser')">Web Browser</button>
@@ -101,6 +111,7 @@
       <button onclick="nextQuestion(4, 'Desktop Software')">Desktop Software</button>
     </div>
 
+    <!-- Question 5 -->
     <div class="question" id="question5">
       <h2>5. What's your budget for this tool?</h2>
       <button onclick="nextQuestion(5, 'Free')">Free</button>
@@ -108,32 +119,33 @@
       <button onclick="nextQuestion(5, 'Paid')">Paid</button>
     </div>
 
+    <!-- Question 6 -->
     <div class="question" id="question6">
       <h2>6. Do you prefer simple tools or powerful advanced tools?</h2>
       <button onclick="nextQuestion(6, 'Simple & Easy')">Simple & Easy</button>
       <button onclick="nextQuestion(6, 'Advanced & Feature-rich')">Advanced & Feature-rich</button>
     </div>
 
+    <!-- Question 7 -->
     <div class="question" id="question7">
       <h2>7. What’s your budget for tools?</h2>
       <button onclick="nextQuestion(7, 'Free Only')">Free Only</button>
       <button onclick="nextQuestion(7, 'Willing to Pay')">Willing to Pay</button>
     </div>
 
+    <!-- Question 8 -->
     <div class="question" id="question8">
       <h2>8. What type of interface do you prefer?</h2>
       <button onclick="finishQuiz('Simple UI')">Simple UI</button>
       <button onclick="finishQuiz('Advanced Features')">Advanced Features</button>
     </div>
 
+    <!-- Result Section -->
     <div class="question" id="result">
       <h2>🎉 Your Recommended Tool:</h2>
       <p id="finalRecommendation">Loading...</p>
     </div>
   </div>
-
-  <iframe data-tally-src="https://tally.so/r/w7EAW0" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Tool Recommendation Quiz"></iframe>
-
 
   <script>
     let answers = [];
@@ -157,13 +169,13 @@
       // Show result
       document.getElementById("result").style.display = "block";
 
-      // Generate custom final answer based on logic (example)
+      // Generate custom final answer based on logic
       const recommendation = generateRecommendation(answers);
       document.getElementById("finalRecommendation").innerText = recommendation;
     }
 
     function generateRecommendation(answers) {
-      // Simple logic example - you can customize this:
+      // Simple logic - can be expanded with more advanced conditions
       if (answers.includes("AI Tools")) {
         return "🤖 We recommend trying ChatGPT, Gemini, or Toolify AI!";
       } else if (answers.includes("Design Tools")) {
@@ -175,6 +187,5 @@
       }
     }
   </script>
-
 </body>
 </html>
