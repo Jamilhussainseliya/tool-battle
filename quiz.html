@@ -41,24 +41,51 @@
   </style>
 </head>
 <body>
-  <div class="quiz-container" id="quiz">
-    <div class="question" id="question">What kind of tool are you looking for?</div>
-    <div class="options" id="options">
-      <div class="option" onclick="nextQuestion('Design')">Design</div>
-      <div class="option" onclick="nextQuestion('Coding')">Coding</div>
-      <div class="option" onclick="nextQuestion('Marketing')">Marketing</div>
-      <div class="option" onclick="nextQuestion('AI Tools')">AI Tools</div>
-    </div>
-  </div>
+    <body>
+        <div id="quiz">
+          <div class="question" id="question1">
+            <h2>1. What kind of tools are you looking for?</h2>
+            <button onclick="nextQuestion(1, 'AI Tools')">AI Tools</button>
+            <button onclick="nextQuestion(1, 'Design Tools')">Design Tools</button>
+            <button onclick="nextQuestion(1, 'Marketing Tools')">Marketing Tools</button>
+          </div>
+      
+          <div class="question" id="question2" style="display: none;">
+            <h2>2. What's your main goal?</h2>
+            <button onclick="nextQuestion(2, 'Increase Productivity')">Increase Productivity</button>
+            <button onclick="nextQuestion(2, 'Collaborate with Team')">Collaborate with Team</button>
+            <button onclick="nextQuestion(2, 'Build Something')">Build Something</button>
+          </div>
+      
+          <!-- You can keep adding more questions here -->
+        </div>
+      </body>
+      
 
   <script>
+    
+    let currentQuestion = 1;
     const answers = [];
-
-    function nextQuestion(answer) {
+  
+    function nextQuestion(questionNumber, answer) {
       answers.push(answer);
-      // Load next question (coming in next step)
-      document.getElementById('quiz').innerHTML = `<div class="question">Loading next question...</div>`;
+  
+      // Hide current question
+      document.getElementById(`question${questionNumber}`).style.display = 'none';
+  
+      // Show next question
+      const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
+      if (nextQuestionDiv) {
+        nextQuestionDiv.style.display = 'block';
+      } else {
+        // If no more questions, show results or summary
+        document.getElementById('quiz').innerHTML = `
+          <div class="question">
+            <h2>Thanks! Based on your answers:</h2>
+            <p>${answers.join(' ➜ ')}</p>
+          </div>`;
+      }
     }
-  </script>
+  </script>  
 </body>
 </html>
