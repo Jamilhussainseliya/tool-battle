@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tool Suggestion Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f8f8f8;
+    }
+    .quiz-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .option {
+      display: block;
+      margin: 8px 0;
+      padding: 10px;
+      background-color: #eee;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container" id="quiz">
+    <div class="question" id="question">What kind of tool are you looking for?</div>
+    <div class="options" id="options">
+      <div class="option" onclick="nextQuestion('Design')">Design</div>
+      <div class="option" onclick="nextQuestion('Coding')">Coding</div>
+      <div class="option" onclick="nextQuestion('Marketing')">Marketing</div>
+      <div class="option" onclick="nextQuestion('AI Tools')">AI Tools</div>
+    </div>
+  </div>
+
+  <script>
+    const answers = [];
+
+    function nextQuestion(answer) {
+      answers.push(answer);
+      // Load next question (coming in next step)
+      document.getElementById('quiz').innerHTML = `<div class="question">Loading next question...</div>`;
+    }
+  </script>
+</body>
+</html>
