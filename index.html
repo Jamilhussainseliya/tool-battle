@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toolify - Tool Battle</title>
-
-  <!-- Orbitron Font for Futuristic Look -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
-  
   <style>
     body {
       margin: 0;
@@ -18,80 +14,69 @@
       color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      padding: 40px 20px;
       min-height: 100vh;
-      padding: 20px;
     }
 
     h1 {
-      font-size: 2.2rem;
-      color: #00f0ff;
-      text-shadow: 0 0 10px #00f0ff88;
+      font-size: 2rem;
       margin-bottom: 40px;
       text-align: center;
     }
 
     .battle {
       display: flex;
-      flex-direction: row;
-      gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 40px;
+      width: 100%;
+      max-width: 900px;
     }
 
     .tool {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid #1f1f1f;
-      border-radius: 16px;
-      box-shadow: 0 0 20px #00f0ff33;
-      padding: 30px 20px;
-      width: 240px;
+      padding: 30px;
+      border-radius: 20px;
+      width: 250px;
+      box-shadow: 0 0 20px #00f0ff55;
       text-align: center;
       backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+
+    .tool:hover {
+      transform: scale(1.05);
     }
 
     .tool h2 {
-      font-size: 1.4rem;
-      color: #00f0ff;
+      font-size: 1.5rem;
       margin-bottom: 10px;
     }
 
     .votes {
       font-size: 1.1rem;
-      margin: 12px 0;
+      margin: 10px 0 20px;
     }
 
     button {
-      padding: 12px 18px;
-      background: #111;
-      color: #00f0ff;
-      border: 1px solid #00f0ff44;
-      border-radius: 10px;
-      font-family: 'Orbitron', sans-serif;
+      padding: 12px 20px;
       font-size: 1rem;
-      box-shadow: 0 0 12px #00f0ff55;
+      border: none;
+      border-radius: 10px;
+      background-color: #00f0ff;
+      color: #000;
+      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     button:hover {
-      background: #00f0ff;
-      color: #000;
-      box-shadow: 0 0 20px #00f0ffaa;
-    }
-
-    @media (max-width: 600px) {
-      .battle {
-        flex-direction: column;
-        align-items: center;
-      }
+      background-color: #00bbcc;
     }
   </style>
 </head>
-
 <body>
-
   <h1>🔥 Tool Battle: ChatGPT vs Gemini</h1>
 
   <div class="battle">
@@ -100,7 +85,6 @@
       <p class="votes" id="votes-chatgpt">Votes: 0</p>
       <button onclick="vote('chatgpt')">Vote</button>
     </div>
-
     <div class="tool" id="gemini">
       <h2>Gemini</h2>
       <p class="votes" id="votes-gemini">Votes: 0</p>
@@ -109,14 +93,14 @@
   </div>
 
   <script>
-  
-  const tools = ['chatgpt', 'gemini'];
+    // Load votes from localStorage
+    const tools = ['chatgpt', 'gemini'];
     tools.forEach(tool => {
       const votes = localStorage.getItem(tool + '-votes') || 0;
       document.getElementById('votes-' + tool).innerText = 'Votes: ' + votes;
     });
 
-
+    // Voting function
     function vote(tool) {
       let currentVotes = parseInt(localStorage.getItem(tool + '-votes') || 0);
       currentVotes++;
