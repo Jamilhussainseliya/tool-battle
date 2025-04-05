@@ -8,356 +8,206 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Orbitron&display=swap"
         rel="stylesheet">
 
-    <style>
-        /* Your combined styles go here (from both style blocks) */
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #00bcd4;
-            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #bdbdbd;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .category-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 60px;
-            margin-bottom: 40px;
-        }
-
-        .category {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid #1f1f1f;
-            border-radius: 16px;
-            box-shadow: 0 0 15px #00f0ff33;
-            padding: 20px;
-            width: 160px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .category:hover {
-            background: #00f0ff22;
-            transform: scale(1.05);
-            box-shadow: 0 0 25px #00f0ffaa;
-        }
-
-        .category img {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 10px;
-        }
-
-        .category h3 {
-            color: #00f0ff;
-            font-size: 1.1rem;
-            margin: 0;
-        }
-
-        h1.battle-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #00bcd4;
-            text-align: center;
-        }
-
-        .battle {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-            max-width: 800px;
-        }
-
-        .tool {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            width: 220px;
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .tool:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
-        }
-
-        .tool h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .votes {
-            font-size: 1rem;
-            margin: 10px 0 15px;
-            color: #bdbdbd;
-        }
-
-        .tool button {
-            padding: 10px 18px;
-            font-size: 0.9rem;
-            border: none;
-            border-radius: 8px;
-            background-color: #00bcd4;
-            color: #121212;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .tool button:hover {
-            background-color: #008ba7;
-        }
-
-        .start-quiz-btn {
-            margin-top: 40px;
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            background-color: #00bcd4;
-            color: #121212;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-        }
-
-        .start-quiz-btn:hover {
-            background-color: #008ba7;
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 600px) {
-            .battle {
-                gap: 20px;
+        <style>
+            :root {
+                --primary-color: #7B4DFF;
+                --primary-hover: #6A3AE8;
+                --dark-bg: #0A0B1A;
+                --card-bg: #161632;
+                --text-light: #FFFFFF;
+                --text-muted: #A0A0CF;
             }
-
-            .tool {
+    
+            /* Light theme variables */
+            .light-theme {
+                --dark-bg: #F5F5FA;
+                --card-bg: #FFFFFF;
+                --text-light: #21213A;
+                --text-muted: #6B6B90;
+            }
+    
+            body {
+                margin: 0;
+                font-family: 'Poppins', sans-serif;
+                background-color: var(--dark-bg);
+                color: var(--text-light);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 20px;
+                min-height: 100vh;
+                box-sizing: border-box;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+    
+            header {
+                text-align: center;
+                margin-bottom: 50px;
+                padding: 0 20px;
+            }
+    
+            header h1 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                color: var(--primary-color);
+                text-shadow: 0 0 10px rgba(123, 77, 255, 0.5);
+            }
+    
+            header p {
+                font-size: 1.1rem;
+                color: var(--text-muted);
+                line-height: 1.6;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            .tool-cards-container {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+    
+            .tool-card {
+                background: var(--card-bg);
+                border-radius: 16px;
+                box-shadow: 0 0 15px rgba(123, 77, 255, 0.3);
+                padding: 20px;
+                width: 160px;
+                text-align: center;
+                transition: all 0.3s ease;
+                text-decoration: none;
+                color: var(--text-light);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            .tool-card:hover {
+                background: rgba(123, 77, 255, 0.1);
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(123, 77, 255, 0.5);
+            }
+    
+            .tool-card img {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 10px;
+                border-radius: 8px;
+            }
+    
+            .tool-card h3 {
+                color: var(--primary-color);
+                font-size: 1.1rem;
+                margin: 0;
+            }
+    
+            h1.battle-title {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 2rem;
+                margin-bottom: 30px;
+                color: var(--primary-color);
+                text-align: center;
+            }
+    
+            .battle {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
                 width: 100%;
+                max-width: 800px;
             }
-
-            .category-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .category {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif; /* A more modern and readable font */
-            background-color: #121212; /* Darker background, common in modern designs */
-            color: #e0e0e0; /* Lighter text for better contrast */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            min-height: 100vh;
-            box-sizing: border-box; /* Important for padding and margin */
-        }
-
-        /* Header Section */
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            font-family: 'Orbitron', sans-serif; /* Keep the cool font for the main title */
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #00bcd4; /* A vibrant accent color */
-            text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
-        }
-
-        header p {
-            font-size: 1.1rem;
-            color: #bdbdbd;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Category Container */
-        .category-container {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .category {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            width: 150px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .category:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .category img {
-            max-width: 60px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .category h3 {
-            font-size: 1.2rem;
-            margin-top: 0;
-            color: #fff;
-        }
-
-        /* Battle Section */
-        h1.battle-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #00bcd4;
-            text-align: center;
-        }
-
-        .battle {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-            max-width: 800px; /* Slightly reduced max width */
-        }
-
-        .tool {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 15px;
-            width: 220px; /* Slightly smaller tool boxes */
-            box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .tool:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
-        }
-
-        .tool h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .votes {
-            font-size: 1rem;
-            margin: 10px 0 15px;
-            color: #bdbdbd;
-        }
-
-        .tool button {
-            padding: 10px 18px;
-            font-size: 0.9rem;
-            border: none;
-            border-radius: 8px;
-            background-color: #00bcd4;
-            color: #121212;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .tool button:hover {
-            background-color: #008ba7;
-        }
-
-        /* Start Quiz Button */
-        .start-quiz-btn {
-            margin-top: 40px;
-            padding: 12px 24px;
-            font-size: 1.1rem;
-            background-color: #00bcd4;
-            color: #121212;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
-            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-        }
-
-        .start-quiz-btn:hover {
-            background-color: #008ba7;
-            transform: scale(1.05);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .battle {
-                gap: 20px;
-            }
-
+    
             .tool {
-                width: 100%; /* Make tools full width on smaller screens */
+                background: var(--card-bg);
+                padding: 25px;
+                border-radius: 15px;
+                width: 220px;
+                box-shadow: 0 0 15px rgba(123, 77, 255, 0.3);
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
             }
-
-            .category-container {
-                flex-direction: column;
-                align-items: center;
+    
+            .tool:hover {
+                transform: scale(1.03);
+                box-shadow: 0 0 20px rgba(123, 77, 255, 0.5);
             }
-
-            .category {
-                width: 80%;
-                margin-bottom: 20px;
+    
+            .tool h2 {
+                font-size: 1.4rem;
+                margin-bottom: 10px;
+                color: var(--text-light);
             }
-        }
-    </style>
+    
+            .votes {
+                font-size: 1rem;
+                margin: 10px 0 15px;
+                color: var(--text-muted);
+            }
+    
+            .tool button {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+                border: none;
+                border-radius: 8px;
+                background-color: var(--primary-color);
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            .tool button:hover {
+                background-color: var(--primary-hover);
+            }
+    
+            .start-quiz-btn {
+                margin-top: 40px;
+                padding: 12px 24px;
+                font-size: 1.1rem;
+                background-color: var(--primary-color);
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                box-shadow: 0 0 10px rgba(123, 77, 255, 0.5);
+                transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            }
+    
+            .start-quiz-btn:hover {
+                background-color: var(--primary-hover);
+                transform: scale(1.05);
+            }
+            
+            footer {
+                margin-top: 40px;
+                color: var(--text-muted);
+                font-size: 0.9rem;
+            }
+    
+            @media (max-width: 600px) {
+                .battle {
+                    gap: 20px;
+                }
+    
+                .tool {
+                    width: 100%;
+                }
+    
+                .tool-cards-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .tool-card {
+                    width: 80%;
+                    margin-bottom: 20px;
+                }
+            }
+        </style>
 </head>
 
 <body>
@@ -417,7 +267,30 @@
     <a href="quiz.html">
         <button class="start-quiz-btn">🚀 Start Smart Tool Quiz</button>
     </a>
-
+    <button id="theme-toggle" class="start-quiz-btn">🌗 Toggle Theme</button>
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+    
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-theme");
+    
+            // Save preference
+            if (document.body.classList.contains("light-theme")) {
+                localStorage.setItem("theme", "light");
+            } else {
+                localStorage.setItem("theme", "dark");
+            }
+        });
+    
+        // On page load: apply saved theme
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.body.classList.add("light-theme");
+            }
+        });
+    </script>
+    
 </body>
 
 </html>
