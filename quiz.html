@@ -105,35 +105,47 @@
         </div>
       </body>
       
-
       <script>
+        const answers = [];
         let currentQuestion = 1;
-        let answers = [];
+        const totalQuestions = 8;
       
-        function nextQuestion(questionNumber, answer) {
+        function nextQuestion(answer) {
           answers.push(answer);
-          document.getElementById('question' + questionNumber).style.display = 'none';
-          let next = questionNumber + 1;
-          let nextEl = document.getElementById('question' + next);
-          if (nextEl) {
-            nextEl.style.display = 'block';
+      
+          // Hide current question
+          document.getElementById(`question${currentQuestion}`).style.display = 'none';
+      
+          currentQuestion++;
+      
+          // If done, show results
+          if (currentQuestion > totalQuestions) {
+            showResults();
+          } else {
+            // Show next question
+            document.getElementById(`question${currentQuestion}`).style.display = 'block';
           }
         }
       
-        function finishQuiz(answer) {
-          answers.push(answer);
-          document.getElementById('question8').style.display = 'none';
-          document.getElementById('result').style.display = 'block';
+        function showResults() {
+          // Example result logic based on answers
+          let result = "We recommend: ";
       
-          // Example simple recommendation logic
-          let recommendation = "Try Notion or Trello!";
-          if (answers.includes("Free Only") && answers.includes("Collaborate with Team")) {
-            recommendation = "Try Trello or ClickUp!";
-          } else if (answers.includes("Build Something") && answers.includes("AI Tool")) {
-            recommendation = "Try Replit or Builder.io!";
+          if (answers.includes('Increase Productivity')) {
+            result += "Notion or Trello";
+          } else if (answers.includes('Build Something')) {
+            result += "Bubble or Webflow";
+          } else {
+            result += "Google Workspace";
           }
       
-          document.getElementById("finalRecommendation").innerText = recommendation;
+          document.getElementById('quiz').innerHTML = `
+            <div class="result">
+              <h2>🎉 Your Recommended Tool</h2>
+              <p>${result}</p>
+              <button onclick="location.reload()">Restart Quiz</button>
+            </div>
+          `;
         }
       </script>
       
