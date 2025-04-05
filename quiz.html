@@ -83,36 +83,59 @@
             <button onclick="nextQuestion(6, 'Simple & Easy')">Simple & Easy</button>
             <button onclick="nextQuestion(6, 'Advanced & Feature-rich')">Advanced & Feature-rich</button>
           </div>
+
+          <div class="question" id="question7" style="display: none;">
+            <h2>7. What’s your budget for tools?</h2>
+            <button onclick="nextQuestion(7, 'Free Only')">Free Only</button>
+            <button onclick="nextQuestion(7, 'Willing to Pay')">Willing to Pay</button>
+          </div>
+
+          <div class="question" id="question8" style="display: none;">
+            <h2>8. What type of interface do you prefer?</h2>
+            <button onclick="finishQuiz('Simple UI')">Simple UI</button>
+            <button onclick="finishQuiz('Advanced Features')">Advanced Features</button>
+          </div>
+
+          <div class="question" id="result" style="display: none;">
+            <h2>🎉 Your Recommended Tool:</h2>
+            <p id="finalRecommendation">Loading...</p>
+          </div>
           
           <!-- You can keep adding more questions here -->
         </div>
       </body>
       
 
-  <script>
-    
-    let currentQuestion = 1;
-    const answers = [];
-  
-    function nextQuestion(questionNumber, answer) {
-      answers.push(answer);
-  
-      // Hide current question
-      document.getElementById(`question${questionNumber}`).style.display = 'none';
-  
-      // Show next question
-      const nextQuestionDiv = document.getElementById(`question${questionNumber + 1}`);
-      if (nextQuestionDiv) {
-        nextQuestionDiv.style.display = 'block';
-      } else {
-        // If no more questions, show results or summary
-        document.getElementById('quiz').innerHTML = `
-          <div class="question">
-            <h2>Thanks! Based on your answers:</h2>
-            <p>${answers.join(' ➜ ')}</p>
-          </div>`;
-      }
-    }
-  </script>  
+      <script>
+        let currentQuestion = 1;
+        let answers = [];
+      
+        function nextQuestion(questionNumber, answer) {
+          answers.push(answer);
+          document.getElementById('question' + questionNumber).style.display = 'none';
+          let next = questionNumber + 1;
+          let nextEl = document.getElementById('question' + next);
+          if (nextEl) {
+            nextEl.style.display = 'block';
+          }
+        }
+      
+        function finishQuiz(answer) {
+          answers.push(answer);
+          document.getElementById('question8').style.display = 'none';
+          document.getElementById('result').style.display = 'block';
+      
+          // Example simple recommendation logic
+          let recommendation = "Try Notion or Trello!";
+          if (answers.includes("Free Only") && answers.includes("Collaborate with Team")) {
+            recommendation = "Try Trello or ClickUp!";
+          } else if (answers.includes("Build Something") && answers.includes("AI Tool")) {
+            recommendation = "Try Replit or Builder.io!";
+          }
+      
+          document.getElementById("finalRecommendation").innerText = recommendation;
+        }
+      </script>
+      
 </body>
 </html>
