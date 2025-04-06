@@ -280,6 +280,15 @@
         <input type="text" id="toolSearch" placeholder="Search for a tool..." oninput="filterTools()" />
         <div id="suggestions" class="suggestions-box"></div>
       </div>
+      <div class="max-w-xl mx-auto mb-6 px-4">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search tools..."
+          class="w-full px-4 py-3 rounded-xl bg-[#161632] text-white placeholder-[#A0A0CF] border border-[#7B4DFF] focus:outline-none focus:ring-2 focus:ring-[#7B4DFF] shadow-[0_0_15px_#7B4DFF]/30"
+        />
+        <ul id="suggestions" class="mt-2 bg-[#0A0B1A] text-white rounded-lg shadow-lg max-h-60 overflow-auto hidden"></ul>
+      </div>
       
   
     <!-- 🧰 Tool Cards -->
