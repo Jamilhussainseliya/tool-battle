@@ -210,164 +210,162 @@
 
             
         </style> 
-        <script>
-            const toolList = [
-              "ChatGPT",
-              "Copy.ai",
-              "WriteSonic",
-              "Rytr",
-              "Jasper",
-              "Sudowrite",
-              "Midjourney",
-              "D-ID",
-              "Pictory",
-              "Synthesia"
-            ];
-          
-            function filterTools() {
-              const input = document.getElementById("toolSearch");
-              const filter = input.value.toLowerCase();
-              const suggestions = document.getElementById("suggestions");
-              suggestions.innerHTML = "";
-          
-              if (!filter) {
-                suggestions.style.display = "none";
-                return;
-              }
-          
-              const matches = toolList.filter(tool => tool.toLowerCase().includes(filter));
-          
-              if (matches.length === 0) {
-                suggestions.style.display = "none";
-                return;
-              }
-          
-              matches.forEach(match => {
-                const item = document.createElement("div");
-                item.textContent = match;
-                item.onclick = () => {
-                  input.value = match;
-                  suggestions.style.display = "none";
-                };
-                suggestions.appendChild(item);
-              });
-          
-              suggestions.style.display = "block";
-            }
-          </script>
-          
+        
 </head>
 
 <body>
 
     <header>
-        <h1>Discover the Best Tools Through Battles & Smart Suggestions</h1>
-        <p>Explore a curated collection of powerful tools. Compare them, vote for your favorites, and let our smart quiz guide you to the perfect solutions for your needs.</p>
+      <h1>Discover the Best Tools Through Battles & Smart Suggestions</h1>
+      <p>Explore a curated collection of powerful tools. Compare them, vote for your favorites, and let our smart quiz guide you to the perfect solutions for your needs.</p>
     </header>
-
+  
+    <!-- 🔍 Search Bar -->
     <div class="search-container">
-        <input
-          type="text"
-          id="toolSearch"
-          placeholder="🔍 Search tools..."
-          onkeyup="filterTools()"
-        />
-        <div id="suggestions"></div>
-      </div>
-
-      
-    <div class="tool-cards-container">
-        <a href="ai-tools.html" class="tool-card">
-          <img src="image-index/ai-icon.jpeg" alt="AI Tools" />
-          <h3>AI Tools</h3>
-        </a>
-      
-        <a href="design-tools.html" class="tool-card">
-          <img src="image-index/design-icon.jpg" alt="Design Tools" />
-          <h3>Design Tools</h3>
-        </a>
-      
-        <a href="marketing-tool.html" class="tool-card">
-            <img src="image-index/marketing-icon.jpg" alt="Marketing Tools" />
-            <h3>Marketing Tools</h3>
-          </a>
-          
-      </div>
-      
-      </div>
-      
-      <section class="featured-tool">
-        <h2>🌟 Featured Tool of the Day</h2>
-        <div class="tool-card-rect">
-          <img src="image-aitool/chatgpt.png" alt="ChatGPT" />
-          <div class="tool-info">
-            <h3>ChatGPT</h3>
-            <p>AI chatbot that helps with writing, ideas, research, and more.</p>
-            <a href="https://chatgpt.com/" target="_blank" class="tool-btn">Try ChatGPT</a>
-          </div>
-        </div>
-      </section>
-      
- 
-      
-    <h1 class="battle-title">🔥 Tool Battle: ChatGPT vs Gemini</h1>
-
-    <div class="battle">
-        <div class="tool" id="chatgpt">
-            <h2>ChatGPT</h2>
-            <p class="votes" id="votes-chatgpt">Votes: 0</p>
-            <button onclick="vote('chatgpt')">Vote</button>
-        </div>
-        <div class="tool" id="gemini">
-            <h2>Gemini</h2>
-            <p class="votes" id="votes-gemini">Votes: 0</p>
-            <button onclick="vote('gemini')">Vote</button>
-        </div>
+      <input
+        type="text"
+        id="toolSearch"
+        placeholder="🔍 Search tools..."
+        onkeyup="filterTools()"
+      />
+      <div id="suggestions"></div>
     </div>
-
-    <script>
-        // Load votes from localStorage
-        const tools = ['chatgpt', 'gemini'];
-        tools.forEach(tool => {
-            const votes = localStorage.getItem(tool + '-votes') || 0;
-            document.getElementById('votes-' + tool).innerText = 'Votes: ' + votes;
-        });
-
-        // Voting function
-        function vote(tool) {
-            let currentVotes = parseInt(localStorage.getItem(tool + '-votes') || 0);
-            currentVotes++;
-            localStorage.setItem(tool + '-votes', currentVotes);
-            document.getElementById('votes-' + tool).innerText = 'Votes: ' + currentVotes;
-        }
-    </script>
+  
+    <!-- 🧰 Tool Cards -->
+    <div class="tool-cards-container">
+      <a href="ai-tools.html" class="tool-card">
+        <img src="image-index/ai-icon.jpeg" alt="AI Tools" />
+        <h3>AI Tools</h3>
+      </a>
+  
+      <a href="design-tools.html" class="tool-card">
+        <img src="image-index/design-icon.jpg" alt="Design Tools" />
+        <h3>Design Tools</h3>
+      </a>
+  
+      <a href="marketing-tool.html" class="tool-card">
+        <img src="image-index/marketing-icon.jpg" alt="Marketing Tools" />
+        <h3>Marketing Tools</h3>
+      </a>
+    </div>
+  
+    <!-- 🌟 Featured Tool -->
+    <section class="featured-tool">
+      <h2>🌟 Featured Tool of the Day</h2>
+      <div class="tool-card-rect">
+        <img src="image-aitool/chatgpt.png" alt="ChatGPT" />
+        <div class="tool-info">
+          <h3>ChatGPT</h3>
+          <p>AI chatbot that helps with writing, ideas, research, and more.</p>
+          <a href="https://chatgpt.com/" target="_blank" class="tool-btn">Try ChatGPT</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- ⚔️ Tool Battle -->
+    <h1 class="battle-title">🔥 Tool Battle: ChatGPT vs Gemini</h1>
+    <div class="battle">
+      <div class="tool" id="chatgpt">
+        <h2>ChatGPT</h2>
+        <p class="votes" id="votes-chatgpt">Votes: 0</p>
+        <button onclick="vote('chatgpt')">Vote</button>
+      </div>
+      <div class="tool" id="gemini">
+        <h2>Gemini</h2>
+        <p class="votes" id="votes-gemini">Votes: 0</p>
+        <button onclick="vote('gemini')">Vote</button>
+      </div>
+    </div>
+  
+    <!-- 🚀 Smart Quiz Button -->
     <a href="quiz.html">
-        <button class="start-quiz-btn">🚀 Start Smart Tool Quiz</button>
+      <button class="start-quiz-btn">🚀 Start Smart Tool Quiz</button>
     </a>
+  
+    <!-- 🌗 Theme Toggle -->
     <button id="theme-toggle" class="start-quiz-btn">🌗 Toggle Theme</button>
+  
+    <!-- 🔁 Voting & Theme Scripts -->
     <script>
-        const toggleBtn = document.getElementById("theme-toggle");
-    
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("light-theme");
-    
-            // Save preference
-            if (document.body.classList.contains("light-theme")) {
-                localStorage.setItem("theme", "light");
-            } else {
-                localStorage.setItem("theme", "dark");
-            }
-        });
-    
-        // On page load: apply saved theme
-        window.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme === "light") {
-                document.body.classList.add("light-theme");
-            }
-        });
+      const tools = ['chatgpt', 'gemini'];
+      tools.forEach(tool => {
+        const votes = localStorage.getItem(tool + '-votes') || 0;
+        document.getElementById('votes-' + tool).innerText = 'Votes: ' + votes;
+      });
+  
+      function vote(tool) {
+        let currentVotes = parseInt(localStorage.getItem(tool + '-votes') || 0);
+        currentVotes++;
+        localStorage.setItem(tool + '-votes', currentVotes);
+        document.getElementById('votes-' + tool).innerText = 'Votes: ' + currentVotes;
+      }
+  
+      const toggleBtn = document.getElementById("theme-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-theme");
+        if (document.body.classList.contains("light-theme")) {
+          localStorage.setItem("theme", "light");
+        } else {
+          localStorage.setItem("theme", "dark");
+        }
+      });
+  
+      window.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "light") {
+          document.body.classList.add("light-theme");
+        }
+      });
     </script>
-    
-</body>
-
+  
+    <!-- 🔍 Search Suggestion Script -->
+    <script>
+      const toolList = [
+        "ChatGPT",
+        "Gemini",
+        "Copy.ai",
+        "WriteSonic",
+        "Jasper",
+        "Rytr",
+        "Midjourney",
+        "Pictory",
+        "Synthesia",
+        "Canva",
+        "Figma"
+      ];
+  
+      function filterTools() {
+        const input = document.getElementById("toolSearch");
+        const filter = input.value.toLowerCase();
+        const suggestions = document.getElementById("suggestions");
+        suggestions.innerHTML = "";
+  
+        if (!filter) {
+          suggestions.style.display = "none";
+          return;
+        }
+  
+        const matches = toolList.filter(tool => tool.toLowerCase().includes(filter));
+  
+        if (matches.length === 0) {
+          suggestions.style.display = "none";
+          return;
+        }
+  
+        matches.forEach(match => {
+          const item = document.createElement("div");
+          item.textContent = match;
+          item.onclick = () => {
+            input.value = match;
+            suggestions.style.display = "none";
+          };
+          suggestions.appendChild(item);
+        });
+  
+        suggestions.style.display = "block";
+      }
+    </script>
+  
+  </body>
+  
 </html>
