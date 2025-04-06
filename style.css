@@ -246,3 +246,57 @@ body.light-theme .start-quiz-btn:hover {
   margin-bottom: 30px;
   text-shadow: 0 0 10px #a855f7;
 }
+.tool-card {
+  background-color: #1e1b4b;
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transition: transform 0.3s ease;
+  margin: auto;
+}
+
+.tool-card:hover {
+  transform: scale(1.03);
+}
+
+.tool-card img {
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.tool-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+}
+
+.tool-card p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin: 5px 0 10px;
+}
+
+.tool-card a {
+  background: #a855f7;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  box-shadow: 0 0 8px #a855f7;
+  transition: background 0.3s ease;
+}
+
+.tool-card a:hover {
+  background: #9333ea;
+}
