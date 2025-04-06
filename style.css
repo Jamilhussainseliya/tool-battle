@@ -234,10 +234,9 @@ body.light-theme .start-quiz-btn:hover {
 }
 
 .featured-tool {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 60px auto;
   padding: 20px;
-  color: white;
   text-align: center;
 }
 
@@ -248,64 +247,50 @@ body.light-theme .start-quiz-btn:hover {
   text-shadow: 0 0 10px #a855f7;
 }
 
-.featured-tool-box {
+.tool-card.featured {
   background-color: #1e1b4b;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 25px;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
   transition: transform 0.3s ease;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
-.featured-tool-box:hover {
-  transform: scale(1.02);
+.tool-card.featured:hover {
+  transform: scale(1.05);
 }
 
-.featured-tool-box img {
-  height: 100px;
-  margin-bottom: 15px;
+.tool-card.featured img {
+  height: 80px;
+  margin-bottom: 10px;
   object-fit: contain;
 }
 
-.featured-tool-info h3 {
-  font-size: 1.5rem;
+.tool-card.featured h2 {
+  font-size: 1.4rem;
   margin: 10px 0;
   color: #fff;
 }
 
-.featured-tool-info p {
+.tool-card.featured p {
+  font-size: 0.95rem;
   color: #ccc;
   margin-bottom: 15px;
-  font-size: 0.95rem;
-  max-width: 500px;
 }
 
-.featured-tool-info a {
+.tool-card.featured a {
   background: #a855f7;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 10px;
+  display: inline-block;
   box-shadow: 0 0 10px #a855f7;
   transition: background 0.3s ease;
 }
 
-.featured-tool-info a:hover {
+.tool-card.featured a:hover {
   background: #9333ea;
-}
-
-/* Mobile Responsive */
-@media (min-width: 600px) {
-  .featured-tool-box {
-    flex-direction: row;
-    text-align: left;
-    justify-content: center;
-    gap: 30px;
-  }
-
-  .featured-tool-box img {
-    height: 120px;
-  }
 }
