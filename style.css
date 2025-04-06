@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --card-bg: #1f1f1f;
+  --text-light: #ffffff;
+  --text-muted: #bbbbbb;
+  --primary-color: #7b4dff;
+  --primary-hover: #9c73ff;
+}
+
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f8f9fa;
@@ -167,4 +176,22 @@ button {
     border-radius: 50%;
     margin-bottom: 1rem;
   }
-  
+  /* Light theme overrides */
+body.light-theme {
+  background-color: #f2f2f2;
+  color: #121212;
+}
+
+body.light-theme .tool,
+body.light-theme .category,
+body.light-theme .start-quiz-btn,
+body.light-theme .tool button {
+  background-color: #ffffff;
+  color: #121212;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+body.light-theme .tool button:hover,
+body.light-theme .start-quiz-btn:hover {
+  background-color: #dddddd;
+}
