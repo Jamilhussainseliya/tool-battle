@@ -33,6 +33,36 @@
       margin: auto;
       padding: 30px;
     }
+    .tool-list {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.tool-card {
+  flex: 0 0 90%;
+  scroll-snap-align: start;
+}
+
+/* Optional smooth scroll */
+.tool-list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .tool-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    overflow-x: unset;
+  }
+
+  .tool-card {
+    flex: unset;
+    scroll-snap-align: unset;
+  }
+}
 
     .tool-card {
       background-color: #1e1b4b;
