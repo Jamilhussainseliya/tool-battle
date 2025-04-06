@@ -249,7 +249,7 @@ body.light-theme .start-quiz-btn:hover {
 .tool-card {
   background-color: #1e1b4b;
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
   height: 200px;
   display: flex;
   align-items: center;
