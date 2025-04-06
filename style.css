@@ -234,47 +234,55 @@ body.light-theme .start-quiz-btn:hover {
 }
 
 .featured-tool {
-  background-color: #1e1b4b;
-  padding: 30px 20px;
-  border-radius: 20px;
-  margin: 40px auto;
   max-width: 1000px;
-  text-align: center;
+  margin: 60px auto;
+  padding: 20px;
   color: white;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  text-align: center;
 }
 
 .featured-tool h2 {
   font-size: 2rem;
-  margin-bottom: 25px;
   color: #a855f7;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #a855f7;
 }
 
-.featured-card {
+.featured-tool-box {
+  background-color: #1e1b4b;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transition: transform 0.3s ease;
 }
 
-.featured-card img {
+.featured-tool-box:hover {
+  transform: scale(1.02);
+}
+
+.featured-tool-box img {
   height: 100px;
+  margin-bottom: 15px;
   object-fit: contain;
 }
 
-.featured-card .info h3 {
-  margin: 10px 0 5px;
+.featured-tool-info h3 {
   font-size: 1.5rem;
+  margin: 10px 0;
   color: #fff;
 }
 
-.featured-card .info p {
-  font-size: 0.95rem;
+.featured-tool-info p {
   color: #ccc;
   margin-bottom: 15px;
+  font-size: 0.95rem;
+  max-width: 500px;
 }
 
-.featured-card .info a {
+.featured-tool-info a {
   background: #a855f7;
   color: white;
   padding: 10px 20px;
@@ -284,18 +292,20 @@ body.light-theme .start-quiz-btn:hover {
   transition: background 0.3s ease;
 }
 
-.featured-card .info a:hover {
+.featured-tool-info a:hover {
   background: #9333ea;
 }
 
-@media (min-width: 768px) {
-  .featured-card {
+/* Mobile Responsive */
+@media (min-width: 600px) {
+  .featured-tool-box {
     flex-direction: row;
-    justify-content: center;
     text-align: left;
+    justify-content: center;
+    gap: 30px;
   }
 
-  .featured-card .info {
-    max-width: 500px;
+  .featured-tool-box img {
+    height: 120px;
   }
 }
