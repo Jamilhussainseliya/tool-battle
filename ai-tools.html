@@ -1,168 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top 10 AI Tools | Toolify</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-      :root {
-        --primary-color: #7b4dff;
-        --primary-hover: #9c73ff;
-        --card-bg: #1e1e2f;
-        --text-light: #ffffff;
-        --text-muted: #cccccc;
-      }
-  
       body {
+        background-color: #0a0a0a;
         font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-        color: #fff;
+        color: white;
         margin: 0;
         padding: 20px;
       }
-  
+
       h1 {
         text-align: center;
         font-size: 2.5rem;
-        color: var(--primary-color);
+        margin-top: 30px;
+        color: #a855f7;
+        text-shadow: 0 0 10px #a855f7;
         margin-bottom: 40px;
-        text-shadow: 0 0 10px var(--primary-color);
       }
-  
 
       .tool-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  margin: 30px auto;
-  padding: 0 20px;
-  max-width: 1200px;
-  justify-items: center;
-}
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+      }
 
+      .tool-card {
+        background-color: #1e1b4b;
+        padding: 20px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+        transition: transform 0.3s ease;
+      }
 
+      .tool-card:hover {
+        transform: scale(1.05);
+      }
 
-.tool-card {
-  max-width: 300px;
-  width: 100%;
-}
+      .tool-card img {
+        height: 80px;
+        margin-bottom: 10px;
+        object-fit: contain;
+      }
 
+      .tool-card h2 {
+        font-size: 1.4rem;
+        margin: 10px 0;
+        color: #fff;
+      }
 
-.tool-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 0 15px rgba(123, 77, 255, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+      .tool-card p {
+        font-size: 0.95rem;
+        color: #ccc;
+        margin-bottom: 15px;
+      }
 
-.tool-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(123, 77, 255, 0.4);
-}
+      .tool-card a {
+        background: #a855f7;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 0 10px #a855f7;
+        transition: background 0.3s ease;
+      }
 
-.tool-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
+      .tool-card a:hover {
+        background: #9333ea;
+      }
+    </style>
+  </head>
 
-.tool-card h2 {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: var(--text-light);
-}
+  <body>
+    <h1>Top 10 AI Tools 🚀</h1>
+    <div class="tool-list">
+      <div class="tool-card">
+        <img src="image-aitool/chatgpt.png" alt="ChatGPT" />
+        <h2>ChatGPT</h2>
+        <p>AI chatbot that can help you with anything.</p>
+        <a href="https://chatgpt.com/" target="_blank">Try ChatGPT</a>
+      </div>
 
-.tool-card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
+      <div class="tool-card">
+        <img src="image-aitool/copyai.png" alt="Copy.ai" />
+        <h2>Copy.ai</h2>
+        <p>Generate marketing content in seconds.</p>
+        <a href="https://www.copy.ai/" target="_blank">Try Copy.ai</a>
+      </div>
 
-.tool-card a {
-  color: white;
-  background-color: var(--primary-color);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
+      <div class="tool-card">
+        <img src="image-aitool/writesonic.jpg" alt="WriteSonic" />
+        <h2>WriteSonic</h2>
+        <p>AI-powered writing assistant for blogs, ads & more.</p>
+        <a href="https://writesonic.com/" target="_blank">Try WriteSonic</a>
+      </div>
 
-.tool-card a:hover {
-  background-color: var(--primary-hover);
-}
+      <div class="tool-card">
+        <img src="image-aitool/rytr.png" alt="Rytr" />
+        <h2>Rytr</h2>
+        <p>Affordable AI content generator for all needs.</p>
+        <a href="https://rytr.me/" target="_blank">Try Rytr</a>
+      </div>
 
-  </style>
-</head>
-<body>
-  <h1>Top 10 AI Tools 🚀</h1>
-  <div class="tool-list">
-    <div class="tool-card">
-      <img src="image-aitool/chatgpt.png" alt="ChatGPT">
-      <h2>ChatGPT</h2>
-      <p>AI chatbot that can help you with anything.</p>
-      <a href="https://chatgpt.com/" target="_blank">Try ChatGPT</a>
+      <div class="tool-card">
+        <img src="image-aitool/jasper.jpg" alt="Jasper" />
+        <h2>Jasper</h2>
+        <p>Advanced AI tool for marketing and long-form content.</p>
+        <a href="https://www.jasper.ai/" target="_blank">Try Jasper</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="image-aitool/sudo-writer.jpg" alt="Sudowrite" />
+        <h2>Sudowrite</h2>
+        <p>Best AI tool for creative and fiction writers.</p>
+        <a href="https://sudowrite.com/" target="_blank">Try Sudowrite</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="image-aitool/midjourney.png" alt="Midjourney" />
+        <h2>Midjourney</h2>
+        <p>Create stunning art using AI prompts.</p>
+        <a href="https://www.midjourney.com/home" target="_blank">Try Midjourney</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="image-aitool/d-id.png" alt="D-ID" />
+        <h2>D-ID</h2>
+        <p>Generate talking AI avatars from text.</p>
+        <a href="https://www.d-id.com/" target="_blank">Try D-ID</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="image-aitool/pictory.jpg" alt="Pictory" />
+        <h2>Pictory</h2>
+        <p>Create videos from blog posts or articles using AI.</p>
+        <a href="https://pictory.ai/" target="_blank">Try Pictory</a>
+      </div>
+
+      <div class="tool-card">
+        <img src="image-aitool/synthesia.png" alt="Synthesia" />
+        <h2>Synthesia</h2>
+        <p>Create AI videos with human-like avatars.</p>
+        <a href="https://www.synthesia.io/" target="_blank">Try Synthesia</a>
+      </div>
     </div>
-    <div class="tool-card">
-      <img src="image-aitool/copyai.png" alt="Copy.ai">
-      <h2>Copy.ai</h2>
-      <p>Generate marketing content in seconds.</p>
-      <a href="https://www.copy.ai/" target="_blank">Try Copy.ai</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/writesonic.jpg" alt="WriteSonic">
-      <h2>WriteSonic</h2>
-      <p>AI-powered writing assistant for blogs, ads & more.</p>
-      <a href="https://writesonic.com/" target="_blank">Try WriteSonic</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/rytr.png" alt="Rytr">
-      <h2>Rytr</h2>
-      <p>Affordable AI content generator for all needs.</p>
-      <a href="https://rytr.me/" target="_blank">Try Rytr</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/jasper.jpg" alt="Jasper">
-      <h2>Jasper</h2>
-      <p>Advanced AI tool for marketing and long-form content.</p>
-      <a href="https://www.jasper.ai/" target="_blank">Try Jasper</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/sudo-writer.jpg" alt="Sudowrite">
-      <h2>Sudowrite</h2>
-      <p>Best AI tool for creative and fiction writers.</p>
-      <a href="https://sudowrite.com/" target="_blank">Try Sudowrite</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/midjourney.png" alt="Midjourney">
-      <h2>Midjourney</h2>
-      <p>Create stunning art using AI prompts.</p>
-      <a href="https://www.midjourney.com/home" target="_blank">Try Midjourney</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/d-id.png" alt="D-ID">
-      <h2>D-ID</h2>
-      <p>Generate talking AI avatars from text.</p>
-      <a href="https://www.d-id.com/" target="_blank">Try D-ID</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/pictory.jpg" alt="Pictory">
-      <h2>Pictory</h2>
-      <p>Create videos from blog posts or articles using AI.</p>
-      <a href="https://pictory.ai/" target="_blank">Try Pictory</a>
-    </div>
-    <div class="tool-card">
-      <img src="image-aitool/synthesia.png" alt="Synthesia">
-      <h2>Synthesia</h2>
-      <p>Create AI videos with human-like avatars.</p>
-      <a href="https://www.synthesia.io/" target="_blank">Try Synthesia</a>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
