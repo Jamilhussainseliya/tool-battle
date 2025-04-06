@@ -255,7 +255,7 @@ body.light-theme .start-quiz-btn:hover {
   align-items: center;
   gap: 15px;
   padding: 20px;
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
   transition: transform 0.3s ease;
   margin: auto;
