@@ -13,6 +13,12 @@
   --primary-hover: #9c73ff;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* ⛔ stop horizontal scroll */
+} 
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -196,18 +202,17 @@ body.light-theme .start-quiz-btn:hover {
   background-color: #dddddd;
 }
 
-.tool-card a {
-  color: white;
-  background-color: var(--primary-color);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  font-weight: bold;
-  font-size: 0.95rem;
-  box-shadow: 0 0 10px var(--primary-color);
-  transition: all 0.3s ease;
+.tool-card {
+  max-width: 300px;
+  width: 100%;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(123, 77, 255, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease;
 }
+
 
 .tool-card a:hover {
   background-color: var(--primary-hover);
@@ -225,3 +230,4 @@ body.light-theme .start-quiz-btn:hover {
     grid-template-columns: 1fr;
   }
 }
+
