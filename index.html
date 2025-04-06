@@ -222,14 +222,10 @@
   
     <!-- 🔍 Search Bar -->
     <div class="search-container">
-      <input
-        type="text"
-        id="toolSearch"
-        placeholder="🔍 Search tools..."
-        onkeyup="filterTools()"
-      />
-      <div id="suggestions"></div>
-    </div>
+        <input type="text" id="toolSearch" placeholder="Search for a tool..." oninput="filterTools()" />
+        <div id="suggestions" class="suggestions-box"></div>
+      </div>
+      
   
     <!-- 🧰 Tool Cards -->
     <div class="tool-cards-container">
@@ -320,51 +316,53 @@
   
     <!-- 🔍 Search Suggestion Script -->
     <script>
-      const toolList = [
-        "ChatGPT",
-        "Gemini",
-        "Copy.ai",
-        "WriteSonic",
-        "Jasper",
-        "Rytr",
-        "Midjourney",
-        "Pictory",
-        "Synthesia",
-        "Canva",
-        "Figma"
-      ];
-  
-      function filterTools() {
-        const input = document.getElementById("toolSearch");
-        const filter = input.value.toLowerCase();
-        const suggestions = document.getElementById("suggestions");
-        suggestions.innerHTML = "";
-  
-        if (!filter) {
-          suggestions.style.display = "none";
-          return;
-        }
-  
-        const matches = toolList.filter(tool => tool.toLowerCase().includes(filter));
-  
-        if (matches.length === 0) {
-          suggestions.style.display = "none";
-          return;
-        }
-  
-        matches.forEach(match => {
-          const item = document.createElement("div");
-          item.textContent = match;
-          item.onclick = () => {
-            input.value = match;
+        const toolList = [
+          "ChatGPT",
+          "Gemini",
+          "Copy.ai",
+          "WriteSonic",
+          "Jasper",
+          "Rytr",
+          "Midjourney",
+          "Pictory",
+          "Synthesia",
+          "Canva",
+          "Figma"
+        ];
+      
+        function filterTools() {
+          const input = document.getElementById("toolSearch");
+          const filter = input.value.toLowerCase();
+          const suggestions = document.getElementById("suggestions");
+          suggestions.innerHTML = "";
+      
+          if (!filter) {
             suggestions.style.display = "none";
-          };
-          suggestions.appendChild(item);
-        });
-  
-        suggestions.style.display = "block";
-      }
-    </script>
+            return;
+          }
+      
+          const matches = toolList.filter(tool => tool.toLowerCase().includes(filter));
+      
+          if (matches.length === 0) {
+            suggestions.style.display = "none";
+            return;
+          }
+      
+          matches.forEach(match => {
+            const card = document.createElement("div");
+            card.className = "suggestion-card";
+            card.textContent = match;
+            card.onclick = () => {
+              input.value = match;
+              suggestions.style.display = "none";
+            };
+            suggestions.appendChild(card);
+          });
+      
+          suggestions.style.display = "block";
+        }
+      </script>
+      
   
   </body>
   
