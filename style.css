@@ -246,57 +246,58 @@ body.light-theme .start-quiz-btn:hover {
   margin-bottom: 30px;
   text-shadow: 0 0 10px #a855f7;
 }
-.tool-card {
-  background-color: #1e1b4b;
-  width: 100%;
-  max-width: 600px;
-  height: 200px;
+.featured-tool {
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tool-card-rect {
   display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 20px;
-  border-radius: 20px;
+  background-color: #1e1b4b;
+  border-radius: 16px;
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  padding: 20px;
+  align-items: center;
+  gap: 20px;
   transition: transform 0.3s ease;
-  margin: auto;
 }
 
-.tool-card:hover {
-  transform: scale(1.03);
+.tool-card-rect:hover {
+  transform: scale(1.02);
 }
 
-.tool-card img {
+.tool-card-rect img {
   height: 100px;
   width: 100px;
-  border-radius: 10px;
   object-fit: contain;
+  border-radius: 10px;
 }
 
-.tool-card h3 {
-  font-size: 1.2rem;
+.tool-info h3 {
   color: #fff;
-  margin: 0;
+  font-size: 1.4rem;
+  margin: 0 0 10px;
 }
 
-.tool-card p {
-  font-size: 0.9rem;
+.tool-info p {
   color: #ccc;
-  margin: 5px 0 10px;
+  font-size: 0.95rem;
+  margin: 0 0 12px;
 }
 
-.tool-card a {
+.tool-btn {
   background: #a855f7;
   color: white;
-  padding: 6px 12px;
+  padding: 8px 16px;
   text-decoration: none;
-  border-radius: 8px;
-  display: inline-block;
-  font-size: 0.85rem;
-  margin-top: 5px;
-  box-shadow: 0 0 8px #a855f7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #a855f7;
   transition: background 0.3s ease;
+  font-weight: 600;
+  display: inline-block;
 }
 
-.tool-card a:hover {
+.tool-btn:hover {
   background: #9333ea;
 }
