@@ -206,8 +206,56 @@
                     width: 80%;
                     margin-bottom: 20px;
                 }
+            }  
+
+            
+        </style> 
+        <script>
+            const toolList = [
+              "ChatGPT",
+              "Copy.ai",
+              "WriteSonic",
+              "Rytr",
+              "Jasper",
+              "Sudowrite",
+              "Midjourney",
+              "D-ID",
+              "Pictory",
+              "Synthesia"
+            ];
+          
+            function filterTools() {
+              const input = document.getElementById("toolSearch");
+              const filter = input.value.toLowerCase();
+              const suggestions = document.getElementById("suggestions");
+              suggestions.innerHTML = "";
+          
+              if (!filter) {
+                suggestions.style.display = "none";
+                return;
+              }
+          
+              const matches = toolList.filter(tool => tool.toLowerCase().includes(filter));
+          
+              if (matches.length === 0) {
+                suggestions.style.display = "none";
+                return;
+              }
+          
+              matches.forEach(match => {
+                const item = document.createElement("div");
+                item.textContent = match;
+                item.onclick = () => {
+                  input.value = match;
+                  suggestions.style.display = "none";
+                };
+                suggestions.appendChild(item);
+              });
+          
+              suggestions.style.display = "block";
             }
-        </style>
+          </script>
+          
 </head>
 
 <body>
@@ -217,6 +265,17 @@
         <p>Explore a curated collection of powerful tools. Compare them, vote for your favorites, and let our smart quiz guide you to the perfect solutions for your needs.</p>
     </header>
 
+    <div class="search-container">
+        <input
+          type="text"
+          id="toolSearch"
+          placeholder="🔍 Search tools..."
+          onkeyup="filterTools()"
+        />
+        <div id="suggestions"></div>
+      </div>
+
+      
     <div class="tool-cards-container">
         <a href="ai-tools.html" class="tool-card">
           <img src="image-index/ai-icon.jpeg" alt="AI Tools" />
@@ -239,11 +298,13 @@
       
       <section class="featured-tool">
         <h2>🌟 Featured Tool of the Day</h2>
-        <div class="tool-card">
+        <div class="tool-card-rect">
           <img src="image-aitool/chatgpt.png" alt="ChatGPT" />
-          <h3>ChatGPT</h3>
-          <p>AI chatbot that helps with writing, ideas, research, and more.</p>
-          <a href="https://chatgpt.com/" target="_blank">Try ChatGPT</a>
+          <div class="tool-info">
+            <h3>ChatGPT</h3>
+            <p>AI chatbot that helps with writing, ideas, research, and more.</p>
+            <a href="https://chatgpt.com/" target="_blank" class="tool-btn">Try ChatGPT</a>
+          </div>
         </div>
       </section>
       
