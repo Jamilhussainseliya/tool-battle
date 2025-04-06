@@ -214,3 +214,14 @@ body.light-theme .start-quiz-btn:hover {
   box-shadow: 0 0 15px var(--primary-hover);
   transform: scale(1.05);
 }
+@media (max-width: 1024px) {
+  .tool-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .tool-list {
+    grid-template-columns: 1fr;
+  }
+}
