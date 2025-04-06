@@ -195,3 +195,22 @@ body.light-theme .tool button:hover,
 body.light-theme .start-quiz-btn:hover {
   background-color: #dddddd;
 }
+
+.tool-card a {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.tool-card a:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 0 15px var(--primary-hover);
+  transform: scale(1.05);
+}
