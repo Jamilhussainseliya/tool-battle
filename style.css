@@ -342,3 +342,182 @@ body.light-theme .start-quiz-btn:hover {
 #suggestions div:hover {
   background-color: #312e81;
 }
+.search-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+#toolSearch {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: var(--card-bg);
+  color: var(--text-light);
+}
+
+#suggestions {
+  position: absolute;
+  background-color: var(--card-bg);
+  color: var(--text-light);
+  border-radius: 8px;
+  margin-top: 5px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(123, 77, 255, 0.2);
+  z-index: 999;
+}
+
+#suggestions div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#suggestions div:hover {
+  background-color: rgba(123, 77, 255, 0.1);
+}
+.featured-tool {
+  text-align: center;
+  margin: 60px 0 40px;
+}
+
+.tool-card-rect {
+  display: flex;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(123, 77, 255, 0.3);
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+
+.tool-card-rect img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.tool-info {
+  text-align: left;
+}
+
+.tool-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.tool-btn:hover {
+  background-color: var(--primary-hover);
+}
+.search-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+#toolSearch {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.suggestions-box {
+  position: absolute;
+  width: 100%;
+  background-color: var(--card-bg);
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: none;
+  padding: 10px;
+}
+
+.suggestion-card {
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.suggestion-card:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.02);
+}
+.featured-tool {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.tool-card-rect {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(123, 77, 255, 0.3);
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.tool-card-rect:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(123, 77, 255, 0.5);
+}
+
+.tool-card-rect img {
+  width: 100px;
+  height: 100px;
+  border-radius: 16px;
+}
+
+.tool-info {
+  text-align: left;
+}
+
+.tool-info h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.tool-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.tool-btn:hover {
+  background-color: var(--primary-hover);
+}
