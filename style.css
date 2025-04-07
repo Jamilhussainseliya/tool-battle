@@ -541,22 +541,37 @@ body.light-theme .start-quiz-btn:hover {
   background-color: #e0e0e0;
   transform: scale(1.1);
 }
-.neon-glow {
-  text-shadow: 0 0 8px #8b5cf6, 0 0 16px #8b5cf6;
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 1rem;
 }
 
-.category-btn {
-  padding: 0.6rem 1.2rem;
-  border: 2px solid #8b5cf6;
-  color: #fff;
-  background: transparent;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  font-weight: 600;
+.category-buttons a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #1f1f2e;
+  transition: background 0.3s;
 }
 
-.category-btn:hover {
-  background: #8b5cf6;
-  color: #0f172a;
-  box-shadow: 0 0 8px #8b5cf6, 0 0 16px #8b5cf6;
+.category-buttons a:hover {
+  background-color: #2d2d44;
+}
+
+/* Add spacing around the search bar */
+.search-bar-container {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+}
+
+/* Optional: improve overall spacing */
+.category-section {
+  padding-top: 50px;
 }
