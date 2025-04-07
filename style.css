@@ -1,4 +1,4 @@
-/* Reset some default styles */
+﻿/* Style for toolify.strafe.one web page */
 * {
   margin: 0;
   padding: 0;
@@ -520,4 +520,29 @@ body.light-theme .start-quiz-btn:hover {
 
 .tool-btn:hover {
   background-color: var(--primary-hover);
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  background: var(--card-bg, #fff); /* Fallback if variable not defined */
+  color: var(--text-light, #333);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: rgba(123, 77, 255, 0.15); /* Slight purple tint */
+  transform: scale(1.1);
 }
