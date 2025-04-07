@@ -522,27 +522,22 @@ body.light-theme .start-quiz-btn:hover {
   background-color: var(--primary-hover);
 }
 
-#theme-toggle {
+.theme-toggle-btn {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  width: 45px;
-  height: 45px;
-  font-size: 1.5rem;
-  background: var(--card-bg, #fff); /* Fallback if variable not defined */
-  color: var(--text-light, #333);
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background-color: #ffffffcc;
   border: none;
   border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-#theme-toggle:hover {
-  background-color: rgba(123, 77, 255, 0.15); /* Slight purple tint */
+.theme-toggle-btn:hover {
+  background-color: #e0e0e0;
   transform: scale(1.1);
 }

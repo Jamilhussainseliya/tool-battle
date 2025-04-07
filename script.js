@@ -5,9 +5,9 @@ function vote(button) {
   countSpan.textContent = count;
 }
 
-const toggleButton = document.getElementById('theme-toggle');
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+const toggleBtn = document.getElementById("theme-toggle");
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 });
- 
