@@ -541,3 +541,22 @@ body.light-theme .start-quiz-btn:hover {
   background-color: #e0e0e0;
   transform: scale(1.1);
 }
+.neon-glow {
+  text-shadow: 0 0 8px #8b5cf6, 0 0 16px #8b5cf6;
+}
+
+.category-btn {
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #8b5cf6;
+  color: #fff;
+  background: transparent;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.category-btn:hover {
+  background: #8b5cf6;
+  color: #0f172a;
+  box-shadow: 0 0 8px #8b5cf6, 0 0 16px #8b5cf6;
+}
