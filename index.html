@@ -263,6 +263,26 @@
   background-color: rgba(123, 77, 255, 0.1);
 }
 
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: var(--card-bg);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(123, 77, 255, 0.3);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(123, 77, 255, 0.2);
+}
+
 
             
         </style> 
@@ -270,12 +290,14 @@
 </head>
 
 
-    <!-- 🌙 toggle view -->
-
-<button id="theme-toggle" class="theme-toggle-btn">🌙</button>
+    
  
 
 <body>
+
+  <!-- 🌙 toggle view -->
+
+<button id="theme-toggle" class="theme-toggle-btn">🌙</button>
 
     <header>
       <h1>Discover the Best Tools Through Battles & Smart Suggestions</h1>
@@ -443,8 +465,17 @@
           suggestions.style.display = "block";
         }
       </script>
-      
-  
-  </body>
-  
+window.addEventListener("DOMContentLoaded", () => {
+  const theme = localStorage.getItem("theme");
+  if (theme === "light") {
+    document.body.classList.add("light-theme");
+  }
+});
+</script>
+
+<footer>
+  <p>© 2025 Toolify. All rights reserved.</p>
+</footer>
+
+</body>
 </html>
